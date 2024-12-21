@@ -4,6 +4,16 @@
 
 The **Library Management System API** provides endpoints for managing books, authors, members, and borrowing activities in a library. Built using Django and Django REST Framework, this API offers robust features for efficient library operations.
 
+
+### Admin Panel Access
+
+The Django Rest Framework Admin Panel can be accessed using the following credentials:
+
+- **Username**: `sayed`  
+- **Password**: `sayed8901`  
+
+
+
 ## API Endpoints
 
 ### Base URL
@@ -74,3 +84,56 @@ The **Library Management System API** provides endpoints for managing books, aut
 - **Return a Book**:  
   `POST` - `activity/return/<id>/`  
   Allows a member to return a book by book ID.
+
+
+<br>
+
+## Sample requests for model schemas:
+
+### To register a new user		- POST
+
+```bash
+{
+    "username": "sohel",
+    "first_name": "Md. Sohel",
+    "last_name": "Rana",
+    "email": "sdssayed24@gmail.com",
+    "password": "sayed8901",
+    "confirm_password": "sayed8901",
+    "user_type": "member"
+}
+```
+
+
+
+### To login		- POST
+
+```bash
+{
+    "username" : "sohel",
+    "password" : "sayed8901"
+}
+```
+
+
+### To add category		- POST
+
+```bash
+{
+    "name": "Short Story"
+}
+```
+
+
+
+### To add book		- POST
+
+```bash
+{
+    "title": "The Call of the Wild",
+    "author": "Jack London",
+    "description": "Set in the Yukon",
+    "quantity": 10,
+    "category": 1
+}
+```
