@@ -29,7 +29,9 @@ SECRET_KEY = 'django-insecure-3&svt3y#5+q)^05t$txtflj&hsef&=82(#bj*%9x11u+kq1mke
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+# allowing all hosts
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -78,6 +80,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+# To trust and allow CSRF token on deployment, adding our frontend domain to CSRF_TRUSTED_ORIGINS list
+CSRF_TRUSTED_ORIGINS = [
+    'https://library-management-api-bix8.onrender.com',
+    'https://*.127.0.0.1'
+]
+
 
 ROOT_URLCONF = 'library_managament.urls'
 
