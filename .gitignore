@@ -1,0 +1,9 @@
+venv
+
+library_mgt_venv
+
+library_management/.env
+
+db.sqlite3
+
+__pycache__/
