@@ -114,25 +114,25 @@ TEMPLATES = [
 WSGI_APPLICATION = 'library_managament.wsgi.application'
 
 
-# # Database
-# # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-# Database configuration for PostgreSQL with on-render development server
 DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://library_management_api_magl_user:RtdWjo5vjdI3i5gKdsjz9BEyhhaV0hDr@dpg-ctj8pudds78s73ent280-a.oregon-postgres.render.com/library_management_api_magl',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+
+# # Database configuration for PostgreSQL with on-render development server
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://library_management_api_magl_user:RtdWjo5vjdI3i5gKdsjz9BEyhhaV0hDr@dpg-ctj8pudds78s73ent280-a.oregon-postgres.render.com/library_management_api_magl',
+#         conn_max_age=600
+#     )
+# }
 
 
 # Password validation
