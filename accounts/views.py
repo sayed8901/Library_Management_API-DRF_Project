@@ -19,6 +19,7 @@ User = get_user_model()
 # Register API
 class RegisterAPIView(APIView):
     permission_classes = [AllowAny]
+    serializer_class = RegisterSerializer
 
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -73,10 +74,6 @@ class LogoutAPIView(APIView):
             token = RefreshToken(refresh_token)
             token.blacklist()  # Blacklist the refresh token
             return Response({"message": "Successfully logged out."}, status=status.HTTP_205_RESET_CONTENT)
+        
         except Exception as e:
             return Response({"error": "Invalid token or already logged out."}, status=status.HTTP_400_BAD_REQUEST)
-
-
-
-
-

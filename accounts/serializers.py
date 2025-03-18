@@ -1,8 +1,8 @@
+# serializers.py in accounts app
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import CustomUser
 from django.contrib.auth.hashers import make_password
-
 
 User = get_user_model()
 
@@ -10,6 +10,7 @@ User = get_user_model()
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True)
     confirm_password = serializers.CharField(write_only=True, required=True)
+    user_type = serializers.CharField(required=True)
     
     class Meta:
         model = User
@@ -27,13 +28,12 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 
-# creating login serializer
+# login serializer
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(required=True, max_length=20)
     password = serializers.CharField(required=True, max_length=20)
 
 
-
+# logout serializer
 class LogoutSerializer(serializers.Serializer):
     refresh = serializers.CharField(required=True)
-
